@@ -5,8 +5,8 @@ import os
 
 def main():
 
-    st.title("Podcast Summaries Showcase")
-    st.markdown("🎙️ Welcome to our Podcast Summaries Showcase!")
+    st.title("Podcast Summary Generator")
+    st.markdown("Not sure if the latest episode of your favorite podcast is worth your time? Searching for new shows but unsure if they'll match your interests? Let this app do the work—get quick, insightful summaries in seconds!")
 
     available_podcast_info = create_dict_from_json_files('.')
 
@@ -22,7 +22,7 @@ def main():
         podcast_info = available_podcast_info[selected_podcast]
 
         # Right section - Newsletter content
-        st.header("Newsletter Content")
+        st.header("Episode content:")
 
         # Display the podcast title
         st.subheader("Episode Title")
@@ -33,7 +33,7 @@ def main():
 
         with col1:
             # Display the podcast episode summary
-            st.subheader("Podcast Episode Summary")
+            st.subheader("Episode Summary")
             st.write(podcast_info['podcast_summary'])
 
         with col2:
@@ -43,7 +43,7 @@ def main():
         col3, col4 = st.columns([3, 7])
 
         with col3:
-            st.subheader("Podcast Guest")
+            st.subheader("Episode Guest")
             st.write(podcast_info['podcast_guest'])
 
         # with col4:
